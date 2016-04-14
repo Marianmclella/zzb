@@ -12,7 +12,7 @@ import zzb.ytu.cn.domain.News;
 import zzb.ytu.edu.cn.daoImpl.NewsImpl;
 import zzb.ytu.edu.cn.utils.Identities;
 
-public class BackStageServlet extends HttpServlet {
+public class AdminServlet extends HttpServlet {
 
 	
 	/**
@@ -26,7 +26,7 @@ public class BackStageServlet extends HttpServlet {
 		NewsImpl newsImpl = new NewsImpl();
 		ArrayList<News> newslist = (ArrayList<News>) newsImpl.showNewsByType(type);
 		request.setAttribute("newslist",newslist);
-		request.getRequestDispatcher("backstage.jsp").forward(request, response);	
+		request.getRequestDispatcher("admin.jsp").forward(request, response);	
 	}
 
 	

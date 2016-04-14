@@ -63,4 +63,11 @@ public class NewsImplTest {
 			System.out.println(news.getTitle()+"\t"+news.getContant()+"\t"+news.getAuthor()+"\t"+news.getTime());
 		}
 	}
+	
+	@Test
+	public void getNewsByIDTest(){
+		String id = "8bd65217-4248-4e8e-8566-f9fbed261da3";
+		News news = newsImpl.getNewsByID(id);
+		System.out.println(news.getTitle()+"\t"+news.getContant()+"\t"+news.getAuthor()+"\t"+news.getId());
+	}
 }

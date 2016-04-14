@@ -17,4 +17,7 @@ public interface INewsDAO {
 	
 	//根据类型显示新闻
 	List<News> showNewsByType(String type);
+	
+	//根据ID找到新闻
+	News getNewsByID(String id);
 }
