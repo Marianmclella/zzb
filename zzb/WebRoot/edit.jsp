@@ -11,21 +11,25 @@
 <html>
 <jsp:include page="head.jsp"></jsp:include>
 <body>
-	<% News news = (News)request.getAttribute("news"); %>
+	<% News news = (News)request.getAttribute("news");
+		if(news==null){
+			news = new News();
+		}
+	 %>
 
 	<div class="am-container">
 		<form class="am-form" method="post" action="edit">
 			<fieldset>
 				<legend>表单标题</legend>
-				<input value="<%=news.getId()%>" style="display: none;" name="id"/>
+				<input value="<%if(news.getId()!=null){news.getId();}%>" style="display: none;" name="id"/>
 				<div class="am-form-group">
 					<label for="doc-ipt-email-1">标题</label> <input type="text" name="title"
-						class="" id="doc-ipt-email-1" value="<%=news.getTitle() %>">
+						class="" id="doc-ipt-email-1" value="<%if(news.getTitle()!=null){news.getTitle();} %>">
 				</div>
 
 				<div class="am-form-group">
 					<label for="doc-ipt-pwd-1">作者</label> <input type="text" name="author"
-						class="" id="doc-ipt-pwd-1" value="<%=news.getAuthor()%>">
+						class="" id="doc-ipt-pwd-1" value="<%if(news.getAuthor()!=null){news.getAuthor();}%>">
 				</div>
 
 
@@ -41,7 +45,7 @@
 
 				<div class="am-form-group">
 					<label for="doc-ta-1">具体内容</label>
-					<textarea name="contant" class="" rows="50" id="doc-ta-1"><%=news.getContant() %></textarea>
+					<textarea name="contant" class="" rows="50" id="doc-ta-1"><%if(news.getContant()!=null){news.getContant();} %></textarea>
 				</div>
 
 				<div class="am-form-group">

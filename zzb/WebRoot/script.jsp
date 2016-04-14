@@ -24,13 +24,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			
 			function edit(id){
-				
 				window.open("http://localhost:8080/zzb/edit?id="+id);
 			}
 			
-			function del(id){
-				var url = "http://localhost:8080/zzb/admin/del?id="+id;
-				window.open(url);
+			function del(id,type){
+				var url = "http://localhost:8080/zzb/del?id="+id+"&&type="+type;
+				window.location.href=url;
+			}
+			
+			
+			function addnews(){
+				window.open("http://localhost:8080/zzb/edit?id=-1");
+			}
+			
+			var arr ="";
+			
+			function add(id){
+				var radio = document.getElementById(id);
+				var str = ","+id;
+				var bool = arr.indexOf(str);
+				if(radio.checked){
+					arr +=","+id;
+				}
+				if(!radio.checked&&bool>=0){
+					arr = arr.replace(str, ",");
+				}
+				document.getElementById("ids").value = arr;
+			}
+			
+			function dels(){
+				alert("in");
+				news.submit();
 			}
    	</script>
 

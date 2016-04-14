@@ -47,6 +47,13 @@
     <servlet-name>EditServlet</servlet-name>
     <servlet-class>zzb.ytu.edu.cn.web.EditServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DelNewsServlet</servlet-name>
+    <servlet-class>zzb.ytu.edu.cn.web.DelNewsServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -81,6 +88,10 @@
   <servlet-mapping>
     <servlet-name>EditServlet</servlet-name>
     <url-pattern>/edit</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelNewsServlet</servlet-name>
+    <url-pattern>/del</url-pattern>
   </servlet-mapping>	
   <welcome-file-list>
     <welcome-file>admin.jsp</welcome-file>

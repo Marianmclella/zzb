@@ -10,6 +10,7 @@ import java.util.List;
 import zzb.ytu.cn.domain.News;
 import zzb.ytu.edu.cn.dao.INewsDAO;
 import zzb.ytu.edu.cn.utils.DBUtils;
+import zzb.ytu.edu.cn.utils.GetTime;
 
 public class NewsImpl implements INewsDAO {
 
@@ -24,7 +25,7 @@ public class NewsImpl implements INewsDAO {
 			preparStatement.setString(1, news.getId());
 			preparStatement.setString(2, news.getTitle());
 			preparStatement.setString(3, news.getContant());
-			preparStatement.setString(4, news.getTime());
+			preparStatement.setString(4, GetTime.NowTime());
 			preparStatement.setString(5, news.getAuthor());
 			preparStatement.setString(6, news.getPicUrl());
 			preparStatement.setString(7, news.getType());
@@ -49,7 +50,7 @@ public class NewsImpl implements INewsDAO {
 			// System.out.println(preparStatement);
 			preparStatement.setString(1, news.getTitle());
 			preparStatement.setString(2, news.getContant());
-			preparStatement.setString(3, news.getTime());
+			preparStatement.setString(3, GetTime.NowTime());
 			preparStatement.setString(4, news.getAuthor());
 			preparStatement.setString(5, news.getPicUrl());
 			preparStatement.setString(6, news.getType());
